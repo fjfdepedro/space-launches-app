@@ -4,7 +4,6 @@ import type { Launch } from '../types';
 import { fetchData } from '../lib/apolloClient';
 import { GET_LAUNCHES } from '../graphql/getLaunches';
 import { Launches } from '../components/Launches';
-import './globals.css'
 
 
 export const metadata: Metadata = {
