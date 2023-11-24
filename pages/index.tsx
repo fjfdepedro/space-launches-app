@@ -2,7 +2,6 @@ import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import type { Metadata } from 'next'
 import type { Launch } from '../types';
 import './globals.css'
-import { Launch } from '../types';
 
 
 export const metadata: Metadata = {
