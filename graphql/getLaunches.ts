@@ -2,13 +2,11 @@ import { gql } from '@apollo/client';
 
 export const GET_LAUNCHES = gql`
   query GetLaunches {
-    launchesPast(limit: 10, sort: "launch_date_local", order: "desc") {
+    launchesPast(limit: 95, offset: 90) {
       id
       mission_name
       launch_date_local
-      launch_site {
-        site_name_long
-      }
+      details
       links {
         article_link
         video_link
