@@ -9,7 +9,9 @@ export function LaunchItem({ launch }: { launch: Launch }) {
       <p><strong>Rocket Name:</strong> { launch.rocket.rocket_name }</p>
       <p><strong>Article Link:</strong> <a href={launch.links.article_link}>{launch.links.article_link}</a></p>
       <p><strong>Video Link:</strong> <a href={launch.links.video_link}>{launch.links.video_link}</a></p>
-      <p><strong>Mission Patch:</strong> <img src={launch.links.mission_patch} alt="Mission Patch" /></p>
+      {launch.links.flickr_images.map((image, index) => (
+        <img key={index} src={image} alt={`Launch ${launch.mission_name} Image ${index + 1}`} />
+      ))}
     </div>
   );
 }
