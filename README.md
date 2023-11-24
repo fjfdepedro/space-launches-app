@@ -1,4 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SpaceX Launches Application
+
+This application is built using Next.js and Apollo Client. It fetches data from the SpaceX API and displays a list of past SpaceX launches.
+
+## Directory Structure
+
+- `lib/`: Contains utility functions and configurations. Currently, it contains the Apollo Client setup.
+- `graphql/`: Contains GraphQL queries used in the application.
+- `types/`: Contains TypeScript interfaces used in the application.
+- `components/`: Contains React components used in the application.
+- `pages/`: Contains the pages of the application. In Next.js, each file in this directory becomes a route automatically.
+
+## Key Files
+
+- `lib/apolloClient.ts`: Sets up Apollo Client and exports a `fetchData` function that fetches data from the SpaceX API.
+- `graphql/getLaunches.ts`: Contains the GraphQL query to fetch past SpaceX launches.
+- `types/index.ts`: Contains the TypeScript interface for a launch.
+- `components/Launches.tsx`: A component that receives an array of launches as a prop and maps over them to render each `LaunchItem`.
+- `components/LaunchItem.tsx`: A component that receives a launch as a prop and renders it.
+- `pages/index.tsx`: The home page of the application. It fetches the launches data and passes it to the `Launches` component.
+
+## How It Works
+
+When a user visits the home page, the `getStaticProps` function in `pages/index.tsx` is called. This function calls `fetchData` with the `GET_LAUNCHES` query, which fetches the past SpaceX launches data from the SpaceX API. The fetched data is passed as a prop to the `Home` component.
+
+The `Home` component receives the launches data and passes it to the `Launches` component. The `Launches` component maps over the launches and renders each one using the `LaunchItem` component.
+
+Each `LaunchItem` component displays the mission name and launch date of a launch. The mission name is a link to the video of the launch.
 
 ## Getting Started
 
