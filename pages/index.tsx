@@ -27,9 +27,7 @@ export default function Home({ launches }: { launches: Launch[] }) {
       <h1 className="text-center text-4xl font-bold mb-4">
         SpaceX Launches
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Launches launches={launches} />
-      </div>
+      <Launches launches={launches} />
     </div>
   )
 }
