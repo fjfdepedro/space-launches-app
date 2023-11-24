@@ -8,7 +8,7 @@ export interface Launch {
   links: {
     article_link: string;
     video_link: string;
-    mission_patch: string;
+    flickr_images: string[];
   };
   rocket: {
     rocket_name: string;
