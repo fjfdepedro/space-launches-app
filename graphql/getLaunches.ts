@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_LAUNCHES = gql`
   query GetLaunches {
-    launchesPast(limit: 10) {
+    launchesPast(limit: 10, sort: "launch_date_local", order: "desc") {
       id
       mission_name
       launch_date_local
