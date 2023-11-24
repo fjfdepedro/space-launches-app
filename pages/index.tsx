@@ -17,14 +17,11 @@ export default function Home({ launches }: { launches: Launch[] }) {
         SpaceX Launches
       </h1>
       <div>
-        {launches.map(launch => {
-          return (
-            <a key={launch.id} href={launch.links.video_link}>
-              <h3>{ launch.mission_name }</h3>
-              <p><strong>Launch Date:</strong> { new Date(launch.launch_date_local).toLocaleDateString("en-US") }</p>
-            </a>
-          );
-        })}
+import { LaunchItem } from '../components/LaunchItem';
+
+// ...
+
+        {launches.map(launch => <LaunchItem key={launch.id} launch={launch} />)}
       </div>
     </div>
 
