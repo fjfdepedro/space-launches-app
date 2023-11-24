@@ -23,14 +23,13 @@ export async function getStaticProps() {
 export default function Home({ launches }: { launches: Launch[] }) {
   console.log('launches', launches);
   return (
-    <div>
-      <h1>
+    <div className="p-6">
+      <h1 className="text-center text-3xl font-bold">
         SpaceX Launches
       </h1>
       <div>
         <Launches launches={launches} />
       </div>
     </div>
-
   )
 }
