@@ -1,5 +1,6 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { DocumentNode } from '@apollo/client';
+import fetch from 'isomorphic-unfetch';
 
 const client = new ApolloClient({
   uri: 'https://spacex-production.up.railway.app/',
