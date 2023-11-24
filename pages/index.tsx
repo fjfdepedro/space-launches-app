@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const Home = () => {
   debugger
-  const { loading, error, data } = useQuery(GET_LAUNCHES_QUERY, {
+  const result = useQuery(GET_LAUNCHES_QUERY, {
     onError: (err) => {
       console.error('GET_LAUNCHES_QUERY error', err);
     },
