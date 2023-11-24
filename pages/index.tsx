@@ -24,10 +24,10 @@ export default function Home({ launches }: { launches: Launch[] }) {
   console.log('launches', launches);
   return (
     <div className="p-6">
-      <h1 className="text-center text-3xl font-bold">
+      <h1 className="text-center text-4xl font-bold mb-4">
         SpaceX Launches
       </h1>
-      <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Launches launches={launches} />
       </div>
     </div>
