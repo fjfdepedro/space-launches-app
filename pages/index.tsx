@@ -30,7 +30,7 @@ export default function Home({ launches }: { launches: Launch[] }) {
         SpaceX Launches
       </h1>
       <div>
-        {launches.map(launch => <LaunchItem key={launch.id} launch={launch} />)}
+        <Launches launches={launches} />
       </div>
     </div>
 
