@@ -31,10 +31,9 @@ export default function Home({ launches }) {
 }
 
 export async function getStaticProps() {
-  const client = new ApolloClient({
-    uri: 'https://spacex-production.up.railway.app/',
-    cache: new InMemoryCache()
-  });
+import { initializeApolloClient } from '../components/ApolloClientProvider';
+
+const client = initializeApolloClient();
 
   const { data } = await client.query({
     query: gql`

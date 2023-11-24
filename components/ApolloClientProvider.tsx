@@ -22,4 +22,11 @@ type ApolloClientProviderProps = React.PropsWithChildren<{}>;
    return <ApolloProvider client={client}>{children}</ApolloProvider>;
  };
 
- export default ApolloClientProvider;
+ export default ApolloClientProvider;import { ApolloClient, InMemoryCache } from '@apollo/client';
+
+export function initializeApolloClient() {
+  return new ApolloClient({
+    uri: 'https://spacex-production.up.railway.app/',
+    cache: new InMemoryCache()
+  });
+}
