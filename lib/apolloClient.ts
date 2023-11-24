@@ -1,19 +1,14 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_LAUNCHES } from '../graphql/getLaunches';
 
 const client = new ApolloClient({
   uri: 'https://spacex-production.up.railway.app/',
   cache: new InMemoryCache()
 });
 
-export async function getStaticProps() {
+export async function fetchData(query) {
   const { data } = await client.query({
-    query: GET_LAUNCHES
+    query
   });
 
-  return {
-    props: {
-      launches: data.launchesPast
-    }
-  }
+  return data;
 }
