@@ -1,6 +1,7 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import type { Metadata } from 'next'
 import type { Launch } from '../types';
+import { getStaticProps } from '../lib/apolloClient';
 import { LaunchItem } from '../components/LaunchItem';
 import './globals.css'
 
@@ -24,7 +25,5 @@ export default function Home({ launches }: { launches: Launch[] }) {
 
   )
 }
-
-import { getStaticProps } from '../lib/apolloClient';
 
 export { getStaticProps };
