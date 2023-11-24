@@ -1,4 +1,3 @@
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import type { Metadata } from 'next'
 import type { Launch } from '../types';
 import { fetchData } from '../lib/apolloClient';
