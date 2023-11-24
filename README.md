@@ -21,7 +21,9 @@ This application is built using Next.js and Apollo Client. It fetches data from 
 
 ## How It Works
 
-When a user visits the home page, the `getStaticProps` function in `pages/index.tsx` is called. This function calls `fetchData` with the `GET_LAUNCHES` query, which fetches the past SpaceX launches data from the SpaceX API. The fetched data is passed as a prop to the `Home` component.
+When you run `next build`, the `getStaticProps` function in `pages/index.tsx` is called at build time. This function calls `fetchData` with the `GET_LAUNCHES` query, which fetches the past SpaceX launches data from the SpaceX API. The fetched data is serialized to JSON and included in the HTML of the page. This data is then used to pre-render the page.
+
+When a user visits the home page, the server responds with the pre-rendered page. Any additional client-side navigation to this page will use the pre-rendered HTML and run the page's JavaScript, which can then load any additional data using client-side fetches.
 
 The `Home` component receives the launches data and passes it to the `Launches` component. The `Launches` component maps over the launches and renders each one using the `LaunchItem` component.
 
