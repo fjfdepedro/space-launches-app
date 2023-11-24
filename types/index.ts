@@ -2,8 +2,15 @@ export interface Launch {
   id: string;
   mission_name: string;
   launch_date_local: string;
-  links: {
-    video_link: string;
+  launch_site: {
+    site_name_long: string;
   };
-  // Add any other fields that are used in your component and returned by the query
+  links: {
+    article_link: string;
+    video_link: string;
+    mission_patch: string;
+  };
+  rocket: {
+    rocket_name: string;
+  };
 }
