@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import type { Launch } from '../types';
 import { fetchData } from '../lib/apolloClient';
 import { GET_LAUNCHES } from '../graphql/getLaunches';
-import { LaunchItem } from '../components/LaunchItem';
+import { Launches } from '../components/Launches';
 import './globals.css'
 
 
