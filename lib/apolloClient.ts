@@ -5,7 +5,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-export async function fetchData(query) {
+import { DocumentNode } from '@apollo/client';
+
+export async function fetchData(query: DocumentNode) {
   const { data } = await client.query({
     query
   });
