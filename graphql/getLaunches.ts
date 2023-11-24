@@ -12,7 +12,7 @@ export const GET_LAUNCHES = gql`
       links {
         article_link
         video_link
-        mission_patch
+        flickr_images
       }
       rocket {
         rocket_name
