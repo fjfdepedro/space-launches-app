@@ -1,6 +1,7 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import type { Metadata } from 'next'
 import type { Launch } from '../types';
+import { LaunchItem } from '../components/LaunchItem';
 import './globals.css'
 
 
@@ -17,10 +18,6 @@ export default function Home({ launches }: { launches: Launch[] }) {
         SpaceX Launches
       </h1>
       <div>
-import { LaunchItem } from '../components/LaunchItem';
-
-// ...
-
         {launches.map(launch => <LaunchItem key={launch.id} launch={launch} />)}
       </div>
     </div>
